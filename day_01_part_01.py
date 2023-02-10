@@ -5,6 +5,8 @@ def read_file(file_path:str):
         file=open(address , "r")
         txt=file.read()
         lines=txt.split("\n")
+        if "" in lines:
+            lines.remove("")
         numbers=list(map(int , lines))
         return numbers
     
@@ -24,5 +26,3 @@ def calculate_fuel(mass_list: list):
 fuels=read_file("input_01")
 result=calculate_fuel(fuels)
 print(result)
-
-
