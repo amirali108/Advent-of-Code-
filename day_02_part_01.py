@@ -5,6 +5,8 @@ def read_file(file_path):
         file=open(address , "r")
         txt=file.read()
         x=txt.split(",")
+        if "" in x:
+            x.remove("")
         numbers=list(map(int , x))
         return numbers
     
@@ -37,6 +39,3 @@ numbers[2]=2
 
 result=calculate(numbers)
 print("answer part one: ", result[0])
-
-
-
